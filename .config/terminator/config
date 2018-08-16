@@ -83,8 +83,15 @@
   [[Elementary]]
     background_color = "#1d2837"
     cursor_color = "#bbbbbb"
+    cursor_shape = ibeam
+    custom_command = tmux
+    font = DroidSansMono Nerd Font Mono 10
     foreground_color = "#ffffff"
     palette = "#000000:#f9555f:#21b089:#fef02a:#589df6:#944d95:#1f9ee7:#bbbbbb:#555555:#fa8c8f:#35bb9a:#ffff55:#589df6:#e75699:#3979bc:#ffffff"
+    scrollback_lines = 10000
+    show_titlebar = False
+    use_custom_command = True
+    use_system_font = False
   [[FirefoxDev]]
     background_color = "#0e1011"
     cursor_color = "#708284"
@@ -150,13 +157,13 @@
     use_custom_command = True
     use_system_font = False
   [[Material colors]]
-    background_color = "#1E282C"
+    background_color = "#1e282c"
     cursor_color = "#657B83"
     cursor_shape = ibeam
     custom_command = tmux
     font = DroidSansMono Nerd Font Mono 10
-    foreground_color = "#C3C7D1"
-    palette = "#073641:#EB606B:#C3E88D:#F7EB95:#80CBC3:#FF2490:#AEDDFF:#FFFFFF:#002B36:#EB606B:#C3E88D:#F7EB95:#7DC6BF:#6C71C3:#34434D:#FFFFFF"
+    foreground_color = "#c3c7d1"
+    palette = "#073641:#eb606b:#c3e88d:#f7eb95:#80cbc3:#ff2490:#aeddff:#ffffff:#002b36:#eb606b:#c3e88d:#f7eb95:#7dc6bf:#6c71c3:#34434d:#ffffff"
     scrollback_lines = 10000
     show_titlebar = False
     use_custom_command = True
@@ -204,6 +211,7 @@
     font = DroidSansMono Nerd Font Mono 10
     foreground_color = "#f9f9f9"
     palette = "#121212:#fa2934:#98e123:#fff30a:#0443ff:#f800f8:#01b6ed:#ffffff:#838383:#f6669d:#b1e05f:#fff26d:#0443ff:#f200f6:#51ceff:#ffffff"
+    scrollback_lines = 10000
     show_titlebar = False
     use_custom_command = True
     use_system_font = False
@@ -249,6 +257,7 @@
     font = DroidSansMono Nerd Font Mono 10
     foreground_color = "#5c6370"
     palette = "#000000:#e06c75:#98c379:#d19a66:#61afef:#c678dd:#56b6c2:#abb2bf:#5c6370:#e06c75:#98c379:#d19a66:#61afef:#c678dd:#56b6c2:#fffefe"
+    scrollback_lines = 10000
     show_titlebar = False
     use_custom_command = True
     use_system_font = False
@@ -275,13 +284,14 @@
     use_custom_command = True
     use_system_font = False
   [[Spacedust]]
-    background_color = "#0a1e24"
+    background_color = "#1c1d1f"
     cursor_color = "#708284"
     cursor_shape = ibeam
     custom_command = tmux
     font = DroidSansMono Nerd Font Mono 10
-    foreground_color = "#ecf0c1"
-    palette = "#6e5346:#e35b00:#5cab96:#e3cd7b:#0f548b:#e35b00:#06afc7:#f0f1ce:#684c31:#ff8a3a:#aecab8:#ffc878:#67a0ce:#ff8a3a:#83a7b4:#fefff1"
+    foreground_color = "#708284"
+    palette = "#56595c:#c94c22:#85981c:#b4881d:#2e8bce:#d13a82:#32a198:#c9c6bd:#45484b:#bd3613:#738a04:#a57705:#2176c7:#c61c6f:#259286:#c9c6bd"
+    scrollback_lines = 10000
     show_titlebar = False
     use_custom_command = True
     use_system_font = False
@@ -296,14 +306,10 @@
     use_custom_command = True
     use_system_font = False
   [[Violet Dark]]
-    background_color = "#1c1d1f"
-    cursor_color = "#708284"
+    cursor_color = "#aaaaaa"
     cursor_shape = ibeam
     custom_command = tmux
     font = DroidSansMono Nerd Font Mono 10
-    foreground_color = "#708284"
-    palette = "#56595c:#c94c22:#85981c:#b4881d:#2e8bce:#d13a82:#32a198:#c9c6bd:#45484b:#bd3613:#738a04:#a57705:#2176c7:#c61c6f:#259286:#c9c6bd"
-    scrollback_lines = 10000
     show_titlebar = False
     use_custom_command = True
     use_system_font = False
