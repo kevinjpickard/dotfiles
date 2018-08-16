@@ -84,7 +84,6 @@ antigen bundle desyncr/auto-ls
 antigen bundle zdharma/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle caarlos0/zsh-git-sync
-antigen bundle oldratlee/hacker-quotes
 antigen bundle adrieankhisbe/diractions
 
 antigen apply
