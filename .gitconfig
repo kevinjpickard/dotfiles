@@ -4,6 +4,7 @@
   email = kevin.pickard@jumpcloud.com
 
 [alias]
+  au = add -u
   st = status -sb
   df = diff
   co = checkout
@@ -23,6 +24,7 @@
 	brs = for-each-ref refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject)' --sort=committerdate
 	brn = for-each-ref refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 	brsn = for-each-ref refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' --sort=committerdate
+  lsfs = ls-tree -r master --name-only
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
