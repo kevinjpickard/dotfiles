@@ -7,7 +7,7 @@
   [[default]]
     [[[child1]]]
       parent = window0
-      profile = default
+      profile = Monokai Soda
       type = Terminal
     [[[window0]]]
       parent = ""
