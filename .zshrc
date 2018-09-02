@@ -16,7 +16,7 @@ if [[ $OSTYPE == darwin* ]]; then
   # Homebrew installs + coreutils
   export PATH="/usr/local/Cellar:$PATH"
   export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-  
+
   # Agent version check
   alias vcheck='python ~/scripts/vcheck.py'
 
@@ -53,7 +53,7 @@ nvm() { # Lazy-Loading NVM to speed up shell start
 # added by travis gem
 [ -f /Users/kevin/.travis/travis.sh ] && source /Users/kevin/.travis/travis.sh
 
-export RBENV_VERSION="2.4.1"
+export RBENV_VERSION="2.5.1"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
@@ -94,4 +94,4 @@ alias tre='tree -CDFfpugha'
 # Alias to update all git repos in a directory
 alias gitsyncall='find . -maxdepth 1 -type d -exec sh -c "(cd {} && pwd && git sync)" ";"'
 
-alias sync-system='ansible-playbook --connection=local ~/sysconfig/core.yml'
+alias sync-system='ANSIBLE_LIBRARY=~/sysconfig/library/aur ansible-playbook --connection=local  ~/sysconfig/sync.yml'
