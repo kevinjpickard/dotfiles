@@ -41,6 +41,7 @@ if dein#load_state('$HOME/.config/nvim/dein')
   call dein#add('mhinz/vim-startify')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('janko-m/vim-test')
+  call dein#add('kaicataldo/material.vim')
 
   " Required:
   call dein#end()
@@ -71,12 +72,8 @@ syntax on
 set backspace=indent,eol,start
 set number
 
-" if exists('+colorcolumn')
-"	set colorcolumn=80
-"else
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%>79v.\+/
-"endif
 
 autocmd vimenter * NERDTree
 let NERDTreeShowHidden=1
@@ -92,14 +89,9 @@ endif
 " backups
 "set backup
 set backupdir=$HOME/backups/vim/backups//
-" Ok this isn't cooperating either. Fuck it.
-"set nobackup
-"set nowritebackup
 
 " swap files
 set directory=$HOME/backups/vim/swap/
-" Since vim REFUSES to move my swap files, fuck em
-"set noswapfile
 
 " Open new splits below and to the right
 set splitbelow
@@ -114,8 +106,7 @@ let g:syntastic_check_on_wq = 1
 " vim-airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-"let g:airline_theme='molokai'
-let g:airline_theme='monokai'
+let g:airline_theme='material'
 
 " listchars to show tabs/spaces
 "   To enable   :set list
@@ -124,10 +115,8 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 if has("nvim")
   " Neovim changes
-  set termguicolors
-  "set background = "molokai"
-  "colorscheme molokai
-  colorscheme monokai
+  set background=dark
+  colorscheme material
   let g:material_theme_style = 'dark'
   set guicursor=
 
@@ -143,6 +132,9 @@ if has("nvim")
   let g:neomake_serialize = 1
   let g:neomake_serialize_abort_on_error = 1
   let g:jedi#completions_enabled = 0
+
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
 " Vim-Workspace Config
@@ -154,8 +146,6 @@ let g:workspace_right_trunc_icon = "\uf0a9"
 
 set updatetime=100
 
-let g:tmuxline_theme = 'zenburn'
-
 " Vim-Test Config
 nmap <silent> t<C-n> :TestNearest<CR> " t Ctrl+n
 nmap <silent> t<C-f> :TestFile<CR>    " t Ctrl+f
@@ -163,4 +153,12 @@ nmap <silent> t<C-s> :TestSuite<CR>   " t Ctrl+s
 nmap <silent> t<C-l> :TestLast<CR>    " t Ctrl+l
 nmap <silent> t<C-g> :TestVisit<CR>   " t Ctrl+g
 let test#strategy = "neovim"
+
+" True colors
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if (has("termguicolors"))
+  set termguicolors
+endif
 
