@@ -46,7 +46,8 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 nvm() { # Lazy-Loading NVM to speed up shell start
   unset -f nvm
   export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+  #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+  . "/usr/local/opt/nvm/nvm.sh"
   nvm "$@"
 }
 
@@ -95,3 +96,7 @@ alias tre='tree -CDFfpugha'
 alias gitsyncall='find . -maxdepth 1 -type d -exec sh -c "(cd {} && pwd && git sync)" ";"'
 
 alias sync-system='ANSIBLE_LIBRARY=~/sysconfig/library/aur ansible-playbook --connection=local  ~/sysconfig/sync.yml'
+
+# Ignore Vagrant warning about winrm, kitchen still wants it installed. I'll submit an issue at some point
+export VAGRANT_IGNORE_WINRM_PLUGIN=true
+
