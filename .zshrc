@@ -77,9 +77,13 @@ export XDG_CONFIG_HOME=~/.config
 
 export PATH="/usr/local/opt/mongodb@3.0/bin:$PATH"
 
+# Go paths
+export PATH="$PATH:$GOBIN"
+
 # Antigen pkg manager
 antigen use oh-my-zsh
-antigen theme bureau
+#antigen theme bureau
+antigen theme nanotech
 antigen bundle LockonS/host-switch
 antigen bundle desyncr/auto-ls
 antigen bundle zdharma/fast-syntax-highlighting
