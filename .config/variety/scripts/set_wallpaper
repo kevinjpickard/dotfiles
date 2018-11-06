@@ -240,5 +240,5 @@ gconftool-2 -t string -s /desktop/gnome/background/picture_filename "$WP" 2> /de
 # if [ "$2" == "auto" ]; then notify-send --icon "$WP" "Wallpaper changed" "$name" ; fi
 
 # Tell wal to regenerate color scheme
-wal -i $(cat .config/variety/wallpaper/wallpaper.jpg.txt)
+#wal -i $(cat .config/variety/wallpaper/wallpaper.jpg.txt)
 
