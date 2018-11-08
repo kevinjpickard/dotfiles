@@ -78,6 +78,8 @@ export XDG_CONFIG_HOME=~/.config
 export PATH="/usr/local/opt/mongodb@3.0/bin:$PATH"
 
 # Go paths
+export GOPATH=~/go
+export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$GOBIN"
 
 # Antigen pkg manager
