@@ -35,3 +35,20 @@
 *.color7:       #f8f8f2
 *.color15:      #f9f8f5
 
+! Glyph spacing
+URxvt.letterSpace: -1
+
+! Open URLs w/ keyboard
+URxvt.perl-ext: default,url-select,resize-font
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
+
+! URL font color
+URxvt.matcher.rend.0: Uline Bold fg5
+
+! Cursor blink
+Urxvt.cursorBlink: true
+
+! Scroll Bar
+Urxvt.scrollBar: false
