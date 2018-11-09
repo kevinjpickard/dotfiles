@@ -48,7 +48,7 @@ URxvt.url-select.underline: true
 URxvt.matcher.rend.0: Uline Bold fg5
 
 ! Cursor blink
-Urxvt.cursorBlink: true
+URxvt.cursorBlink: true
 
 ! Scroll Bar
-Urxvt.scrollBar: false
+URxvt.scrollBar: false
