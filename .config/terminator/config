@@ -1,6 +1,7 @@
 [global_config]
+  borderless = True
   enabled_plugins = TerminatorThemes, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
-  title_font = DroidSansMono Nerd Font Mono Bold 11
+  title_font = DroidSansMonoSlashed Nerd Font 11
   title_use_system_font = False
 [keybindings]
 [layouts]
@@ -196,6 +197,7 @@
     allow_bold = False
     background_color = "#1a1a1a"
     background_darkness = 0.87
+    background_type = transparent
     cursor_color = "#f6f7ec"
     cursor_shape = ibeam
     custom_command = tmux
