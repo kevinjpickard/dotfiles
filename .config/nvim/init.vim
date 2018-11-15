@@ -43,6 +43,7 @@ if dein#load_state('$HOME/.config/nvim/dein')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('janko-m/vim-test')
   call dein#add('kaicataldo/material.vim')
+  call dein#add('dylanaraps/wal.vim')
 
   " Required:
   call dein#end()
@@ -116,8 +117,9 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 if has("nvim")
   " Neovim changes
-  set background=dark
-  colorscheme material
+  "set background=dark
+  "colorscheme material
+  colorscheme wal " Make sure to unset termguicolors with this theme
   let g:material_theme_style = 'dark'
   set guicursor=
 
@@ -160,6 +162,6 @@ let test#strategy = "neovim"
 "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
 " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
 if (has("termguicolors"))
-  set termguicolors
+  "set termguicolors
 endif
 

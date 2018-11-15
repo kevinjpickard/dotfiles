@@ -109,3 +109,11 @@ export VAGRANT_IGNORE_WINRM_PLUGIN=true
 
 # added by travis gem
 [ -f /home/kevin/.travis/travis.sh ] && source /home/kevin/.travis/travis.sh
+
+# Pywal colorscheme
+(cat $HOME/.cache/wal/sequences &)
+source ~/.cache/wal/colors-tty.sh
+
+# System info
+neofetch
+
