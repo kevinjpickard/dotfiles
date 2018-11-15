@@ -1,1 +1,5 @@
 rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
+rofi.sidebar-mode: true
+rofi.location: 2
+rofi.modi: window,drun,ssh
+rofi.show-icons: true
