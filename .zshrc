@@ -117,3 +117,5 @@ source ~/.cache/wal/colors-tty.sh
 # System info
 neofetch
 
+export color0_alpha="#08${color0/'#'}"
+
