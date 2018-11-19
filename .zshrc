@@ -87,11 +87,12 @@ antigen use oh-my-zsh
 #antigen theme bureau
 antigen theme nanotech
 antigen bundle LockonS/host-switch
+antigen bundle adrieankhisbe/diractions
+antigen bundle caarlos0/zsh-git-sync
 antigen bundle desyncr/auto-ls
 antigen bundle zdharma/fast-syntax-highlighting
+antigen bundle zpm-zsh/autoenv
 antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle caarlos0/zsh-git-sync
-antigen bundle adrieankhisbe/diractions
 
 antigen apply
 
