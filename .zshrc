@@ -107,7 +107,6 @@ alias sync-system='ANSIBLE_LIBRARY=~/sysconfig/library/aur ansible-playbook --co
 # Ignore Vagrant warning about winrm, kitchen still wants it installed. I'll submit an issue at some point
 export VAGRANT_IGNORE_WINRM_PLUGIN=true
 
-
 # added by travis gem
 [ -f /home/kevin/.travis/travis.sh ] && source /home/kevin/.travis/travis.sh
 
