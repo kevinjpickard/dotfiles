@@ -117,9 +117,9 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 if has("nvim")
   " Neovim changes
-  "set background=dark
-  "colorscheme material
-  colorscheme wal " Make sure to unset termguicolors with this theme
+  set background=dark
+  colorscheme material
+  "colorscheme wal " Make sure to unset termguicolors with this theme
   let g:material_theme_style = 'dark'
   set guicursor=
 
