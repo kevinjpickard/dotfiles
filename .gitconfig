@@ -33,3 +33,5 @@
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[core]
+	excludesfile = /Users/kevin/.gitignore
