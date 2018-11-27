@@ -107,14 +107,15 @@ alias sync-system='ANSIBLE_LIBRARY=~/sysconfig/library/aur ansible-playbook --co
 # Ignore Vagrant warning about winrm, kitchen still wants it installed. I'll submit an issue at some point
 export VAGRANT_IGNORE_WINRM_PLUGIN=true
 
-
 # added by travis gem
 [ -f /home/kevin/.travis/travis.sh ] && source /home/kevin/.travis/travis.sh
 
 # Pywal colorscheme
-(cat $HOME/.cache/wal/sequences &)
-source ~/.cache/wal/colors-tty.sh
+#(cat $HOME/.cache/wal/sequences &)
+#source ~/.cache/wal/colors-tty.sh
 
 # System info
 neofetch
+
+#export color0_alpha="#08${color0/'#'}"
 
