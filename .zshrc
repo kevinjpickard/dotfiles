@@ -82,8 +82,19 @@ export GOPATH=~/go
 export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$GOBIN"
 
+# TMux ZSH Plugin Behavior
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOQUIT=true
+ZSH_TMUX_AUTOSTART_ONCE=true
+ZSH_TMUX_AUTOCONNECT=false
+
 # Antigen pkg manager
 antigen use oh-my-zsh
+antigen bundle git
+antigen bundle ssh-agent
+antigen bundle colorize
+antigen bundle sudo
+antigen bundle tmux
 #antigen theme bureau
 antigen theme nanotech
 antigen bundle LockonS/host-switch
@@ -118,4 +129,8 @@ export VAGRANT_IGNORE_WINRM_PLUGIN=true
 neofetch
 
 #export color0_alpha="#08${color0/'#'}"
+
+# Setup SSH Agent
+#eval $(ssh-agent) > /dev/null
+#ssh-add 2>/dev/null
 
