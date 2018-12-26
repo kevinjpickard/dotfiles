@@ -37662,10 +37662,14 @@
 	<true/>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>-1216 1097 894 435 -1440 80 1440 2560 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>-1030 1706 620 392 -1440 80 1440 2560 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1043 1684 928 394 -1440 80 1440 2560 </string>
+	<string>-1043 1723 796 486 -1440 80 1440 2537 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 1178 0 0 1920 1178 </string>
+	<string>0 0 906 2537 0 0 1920 1200 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>-1398 892 1920 1177 -1440 80 1440 2560 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -37941,7 +37945,7 @@
 			<key>Columns</key>
 			<integer>128</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/fish</string>
+			<string></string>
 			<key>Cursor Boost</key>
 			<real>0.0</real>
 			<key>Cursor Color</key>
@@ -38017,7 +38021,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string>tmux</string>
+			<string></string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -39103,6 +39107,8 @@
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>558227677.36961102</real>
 	<key>OpenArrangementAtStartup</key>
@@ -39156,6 +39162,8 @@
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<false/>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -39165,7 +39173,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-09-09T23:14:37Z</date>
+	<date>2018-12-07T01:01:57Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -39187,7 +39195,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.0</string>
+	<string>3.2.3</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

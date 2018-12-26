@@ -134,3 +134,6 @@ neofetch
 #eval $(ssh-agent) > /dev/null
 #ssh-add 2>/dev/null
 
+# Pretty-Print Path
+alias path="echo $PATH | tr -s ':' '\n'"
+
