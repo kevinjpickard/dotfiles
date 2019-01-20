@@ -54,8 +54,9 @@ nvm() { # Lazy-Loading NVM to speed up shell start
 # added by travis gem
 [ -f /Users/kevin/.travis/travis.sh ] && source /Users/kevin/.travis/travis.sh
 
-export RBENV_VERSION="2.5.1"
+export RBENV_VERSION="2.6.0"
 export PATH="$HOME/.rbenv/bin:$PATH"
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 eval "$(rbenv init -)"
 
 # added by Miniconda3 4.3.21 installer
@@ -113,7 +114,7 @@ alias tre='tree -CDFfpugha'
 # Alias to update all git repos in a directory
 alias gitsyncall='find . -maxdepth 1 -type d -exec sh -c "(cd {} && pwd && git sync)" ";"'
 
-alias sync-system='ANSIBLE_LIBRARY=~/sysconfig/library/aur ansible-playbook --connection=local  ~/sysconfig/sync.yml'
+alias sync-system='ANSIBLE_LIBRARY=~/sysconfig/library/aur ansible-playbook --connection=local  ~/sysconfig/sync.yml --extra-vars "username=$USER"'
 
 # Ignore Vagrant warning about winrm, kitchen still wants it installed. I'll submit an issue at some point
 export VAGRANT_IGNORE_WINRM_PLUGIN=true
@@ -136,4 +137,5 @@ neofetch
 
 # Pretty-Print Path
 alias path="echo $PATH | tr -s ':' '\n'"
+export GALLIUM_HUD=fps
 
