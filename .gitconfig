@@ -35,3 +35,4 @@
 	insteadOf = https://github.com/
 [core]
 	excludesfile = /Users/kevin/.gitignore
+	hooksPath = /Users/kevin/.git/hooks

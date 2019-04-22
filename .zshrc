@@ -4,10 +4,6 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 source $ZSH/oh-my-zsh.sh
 
-export GOPATH="$HOME/go"
-export GOBIN="$GOPATH/bin"
-export GOEXE="$GOPATH/exe"
-
 # OSX env
 if [[ $OSTYPE == darwin* ]]; then
   #echo 'Setting up macOS env...'
@@ -30,6 +26,15 @@ if [[ $OSTYPE == darwin* ]]; then
   source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 
   source $(brew --prefix)/share/antigen/antigen.zsh
+
+  ## pyenv install fix ##
+  # For compilers to find zlib you may need to set:
+  export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
+  export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
+
+  # For pkg-config to find zlib you may need to set:
+  export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
+  ## pyenv install fix ##
 else
   source /usr/share/zsh/share/antigen.zsh
 fi
@@ -56,7 +61,7 @@ nvm() { # Lazy-Loading NVM to speed up shell start
 
 export RBENV_VERSION="2.6.0"
 export PATH="$HOME/.rbenv/bin:$PATH"
-export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+#export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 eval "$(rbenv init -)"
 
 # added by Miniconda3 4.3.21 installer
@@ -138,4 +143,7 @@ neofetch
 # Pretty-Print Path
 alias path="echo $PATH | tr -s ':' '\n'"
 export GALLIUM_HUD=fps
+
+# pyenv init
+eval "$(pyenv init -)"
 

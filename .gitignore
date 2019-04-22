@@ -1,4 +1,5 @@
 # AutoEnv files
 .env
 .out
+.in
 
