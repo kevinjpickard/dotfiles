@@ -83,11 +83,6 @@ export XDG_CONFIG_HOME=~/.config
 
 export PATH="/usr/local/opt/mongodb@3.0/bin:$PATH"
 
-# Go paths
-export GOPATH=~/go
-export GOBIN="$GOPATH/bin"
-export PATH="$PATH:$GOBIN"
-
 # TMux ZSH Plugin Behavior
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOQUIT=true
@@ -132,7 +127,7 @@ export VAGRANT_IGNORE_WINRM_PLUGIN=true
 #source ~/.cache/wal/colors-tty.sh
 
 # System info
-neofetch
+#neofetch
 
 #export color0_alpha="#08${color0/'#'}"
 
@@ -146,4 +141,18 @@ export GALLIUM_HUD=fps
 
 # pyenv init
 eval "$(pyenv init -)"
+
+# Trying to add a different background color to prompt lines to make them pop-out (useful for commands with a lot of output)
+#PROMPT='%{$bg[grey]%} '$PROMPT
+
+# Go Stuff
+export GOPATH=~/go
+export GOBIN="$GOPATH/bin"
+export GOROOT=/usr/local/go
+export PATH="${PATH}:$GOBIN"
+
+# Docker/Docker-Compose
+alias dc='docker-compose'
+
+alias fixauthsock='export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK"' # For some reason this keeps getting set wrong, breaks docker
 

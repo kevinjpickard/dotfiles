@@ -3,3 +3,9 @@
 .out
 .in
 
+# Desktop Services Store (macOS)
+.DS_Store
+
+# Editor Files
+.vscode/
+
