@@ -59,9 +59,9 @@ nvm() { # Lazy-Loading NVM to speed up shell start
 # added by travis gem
 [ -f /Users/kevin/.travis/travis.sh ] && source /Users/kevin/.travis/travis.sh
 
-export RBENV_VERSION="2.6.0"
+export RBENV_VERSION="2.6.3"
 export PATH="$HOME/.rbenv/bin:$PATH"
-#export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+export PATH="$HOME/.rbenv/versions/$RBENV_VERSION/bin:$PATH"
 eval "$(rbenv init -)"
 
 # added by Miniconda3 4.3.21 installer
@@ -96,6 +96,7 @@ antigen bundle ssh-agent
 antigen bundle colorize
 antigen bundle sudo
 antigen bundle tmux
+antigen bundle golang
 #antigen theme bureau
 antigen theme nanotech
 antigen bundle LockonS/host-switch
@@ -154,5 +155,6 @@ export PATH="${PATH}:$GOBIN"
 # Docker/Docker-Compose
 alias dc='docker-compose'
 
-alias fixauthsock='export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK"' # For some reason this keeps getting set wrong, breaks docker
+export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK" # Fix this. For some reason its never set correctly and breaks 
+#alias fixauthsock='export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK"' # For some reason this keeps getting set wrong, breaks docker
 

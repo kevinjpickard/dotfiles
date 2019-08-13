@@ -66,6 +66,9 @@ set softtabstop=0
 set expandtab
 set shiftwidth=2
 set smarttab
+set autoindent
+set ruler
+set showcmd
 
 " Gherkin syntax
 au Bufread,BufNewFile *.feature set filetype=gherkin
