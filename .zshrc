@@ -1,8 +1,8 @@
 export ZSH="$HOME/.oh-my-zsh"
-DISABLE_UPDATE_PROMPT="true"
-ENABLE_CORRECTION="true"
-COMPLETION_WAITING_DOTS="true"
 source $ZSH/oh-my-zsh.sh
+DISABLE_UPDATE_PROMPT="true"
+DISABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
 
 # OSX env
 if [[ $OSTYPE == darwin* ]]; then
@@ -93,13 +93,11 @@ ZSH_TMUX_AUTOCONNECT=false
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle ssh-agent
-antigen bundle colorize
 antigen bundle sudo
 antigen bundle tmux
 antigen bundle golang
 #antigen theme bureau
 antigen theme nanotech
-antigen bundle LockonS/host-switch
 antigen bundle adrieankhisbe/diractions
 antigen bundle caarlos0/zsh-git-sync
 antigen bundle desyncr/auto-ls

@@ -9,3 +9,6 @@
 # Editor Files
 .vscode/
 
+# node modules
+node_modules/
+
