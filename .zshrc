@@ -25,8 +25,6 @@ if [[ $OSTYPE == darwin* ]]; then
   #alias vcheck="python ~/scripts/vcheck.py"
   source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 
-  source $(brew --prefix)/share/antigen/antigen.zsh
-
   ## pyenv install fix ##
   # For compilers to find zlib you may need to set:
   export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
@@ -89,23 +87,9 @@ ZSH_TMUX_AUTOQUIT=true
 ZSH_TMUX_AUTOSTART_ONCE=true
 ZSH_TMUX_AUTOCONNECT=false
 
-# Antigen pkg manager
-antigen use oh-my-zsh
-antigen bundle git
-antigen bundle ssh-agent
-antigen bundle sudo
-antigen bundle tmux
-antigen bundle golang
-#antigen theme bureau
-antigen theme nanotech
-antigen bundle adrieankhisbe/diractions
-antigen bundle caarlos0/zsh-git-sync
-antigen bundle desyncr/auto-ls
-antigen bundle zdharma/fast-syntax-highlighting
-antigen bundle zpm-zsh/autoenv
-antigen bundle zsh-users/zsh-autosuggestions
-
-antigen apply
+# Antibody
+source <(antibody init)
+antibody bundle < ~/.zsh_plugins.txt
 
 alias ll='ls --color=auto -lhaH'
 alias dots='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
@@ -125,14 +109,7 @@ export VAGRANT_IGNORE_WINRM_PLUGIN=true
 #(cat $HOME/.cache/wal/sequences &)
 #source ~/.cache/wal/colors-tty.sh
 
-# System info
-#neofetch
-
 #export color0_alpha="#08${color0/'#'}"
-
-# Setup SSH Agent
-#eval $(ssh-agent) > /dev/null
-#ssh-add 2>/dev/null
 
 # Pretty-Print Path
 alias path="echo $PATH | tr -s ':' '\n'"
