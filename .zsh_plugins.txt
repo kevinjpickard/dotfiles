@@ -1,0 +1,18 @@
+#robbyrussell/oh-my-zsh path:plugins/tmux
+robbyrussell/oh-my-zsh path:plugins/git
+robbyrussell/oh-my-zsh path:plugins/ssh-agent
+robbyrussell/oh-my-zsh path:plugins/sudo
+robbyrussell/oh-my-zsh path:plugins/golang
+robbyrussell/oh-my-zsh path:plugins/pipenv
+adrieankhisbe/diractions
+caarlos0/zsh-git-sync kind:path
+desyncr/auto-ls
+zdharma/fast-syntax-highlighting
+zpm-zsh/autoenv
+zsh-users/zsh-autosuggestions
+bric3/nice-exit-code
+
+# Theme
+robbyrussell/oh-my-zsh path:lib
+robbyrussell/oh-my-zsh path:themes/nanotech.zsh-theme
+#robbyrussell/oh-my-zsh path:themes/rkj-repos.zsh-theme

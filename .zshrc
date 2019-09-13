@@ -1,4 +1,10 @@
 export ZSH="$HOME/.oh-my-zsh"
+# TMux ZSH Plugin Behavior
+export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOQUIT=true
+export ZSH_TMUX_AUTOSTART_ONCE=true
+export ZSH_TMUX_AUTOCONNECT=false
+plugins=(tmux)
 source $ZSH/oh-my-zsh.sh
 DISABLE_UPDATE_PROMPT="true"
 DISABLE_CORRECTION="true"
@@ -81,11 +87,7 @@ export XDG_CONFIG_HOME=~/.config
 
 export PATH="/usr/local/opt/mongodb@3.0/bin:$PATH"
 
-# TMux ZSH Plugin Behavior
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOQUIT=true
-ZSH_TMUX_AUTOSTART_ONCE=true
-ZSH_TMUX_AUTOCONNECT=false
+
 
 # Antibody
 source <(antibody init)
@@ -130,6 +132,5 @@ export PATH="${PATH}:$GOBIN"
 # Docker/Docker-Compose
 alias dc='docker-compose'
 
-export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK" # Fix this. For some reason its never set correctly and breaks 
+export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK" # Fix this. For some reason its never set correctly and breaks
 #alias fixauthsock='export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK"' # For some reason this keeps getting set wrong, breaks docker
-

@@ -37676,6 +37676,8 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame ProfilesPanel</key>
+	<string>391 1757 735 382 -990 1200 3440 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 588 620 392 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -37683,7 +37685,9 @@
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1920 1177 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>-990 1200 1732 1417 -990 1200 3440 1417 </string>
+	<string>-241 1335 906 1177 -990 1200 3440 1417 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>-495 1200 906 1417 -990 1200 3440 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -37928,7 +37932,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>Recycle</string>
+			<string>No</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -39027,9 +39031,11 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
+		<string>3.3.2</string>
 		<string>3.2.9</string>
-		<string>3.3.0</string>
 		<string>3.3.1</string>
+		<string>3.3.0</string>
+		<string>3.3.3</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -39041,14 +39047,14 @@
 		<key>screenFrame</key>
 		<string>{{-990, 1200}, {3440, 1440}}</string>
 		<key>topLeft</key>
-		<string>{331, 2358}</string>
+		<string>{206, 2311}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>6C100B36-9697-4601-B85D-A95B6DD2AFCA</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>11</integer>
+	<integer>25</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -39481,6 +39487,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>number</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentTab.currentSession.hostname</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -39803,7 +39817,7 @@
 	<key>QuitWhenAllWindowsClosed</key>
 	<false/>
 	<key>SUAutomaticallyUpdate</key>
-	<false/>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -39813,7 +39827,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-08-14T16:11:08Z</date>
+	<date>2019-09-09T14:53:04Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -40731,7 +40745,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.1</string>
+	<string>3.3.3</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
