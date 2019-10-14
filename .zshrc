@@ -40,7 +40,6 @@ if [[ $OSTYPE == darwin* ]]; then
   export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
   ## pyenv install fix ##
 else
-  source /usr/share/zsh/share/antigen.zsh
 fi
 
 export EDITOR='nvim'
@@ -87,8 +86,6 @@ export XDG_CONFIG_HOME=~/.config
 
 export PATH="/usr/local/opt/mongodb@3.0/bin:$PATH"
 
-
-
 # Antibody
 source <(antibody init)
 antibody bundle < ~/.zsh_plugins.txt
@@ -99,7 +96,7 @@ alias tre='tree -CDFfpugha'
 # Alias to update all git repos in a directory
 alias gitsyncall='find . -maxdepth 1 -type d -exec sh -c "(cd {} && pwd && git sync)" ";"'
 
-alias sync-system='ANSIBLE_LIBRARY=~/sysconfig/library/aur ansible-playbook --connection=local  ~/sysconfig/sync.yml --extra-vars "username=$USER"'
+alias sync-system='ANSIBLE_LIBRARY=~/sysconfig/ansible/library/aur ansible-playbook --connection=local  ~/sysconfig/ansible/sync.yml --extra-vars "username=$USER"'
 
 # Ignore Vagrant warning about winrm, kitchen still wants it installed. I'll submit an issue at some point
 export VAGRANT_IGNORE_WINRM_PLUGIN=true
@@ -126,11 +123,10 @@ eval "$(pyenv init -)"
 # Go Stuff
 export GOPATH=~/go
 export GOBIN="$GOPATH/bin"
-export GOROOT=/usr/local/go
 export PATH="${PATH}:$GOBIN"
 
 # Docker/Docker-Compose
 alias dc='docker-compose'
 
-export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK" # Fix this. For some reason its never set correctly and breaks
+#export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK" # Fix this. For some reason its never set correctly and breaks
 #alias fixauthsock='export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK"' # For some reason this keeps getting set wrong, breaks docker
