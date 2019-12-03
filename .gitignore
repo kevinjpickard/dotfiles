@@ -8,6 +8,7 @@
 
 # Editor Files
 .vscode/
+.code_workspace
 
 # node modules
 node_modules/

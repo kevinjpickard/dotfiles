@@ -17,7 +17,7 @@ if [[ $OSTYPE == darwin* ]]; then
 
   # Homebrew installs + coreutils
   export PATH="/usr/local/Cellar:$PATH"
-  export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  #export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
   # Agent version check
   alias vcheck='python ~/scripts/vcheck.py'
@@ -90,7 +90,8 @@ export PATH="/usr/local/opt/mongodb@3.0/bin:$PATH"
 source <(antibody init)
 antibody bundle < ~/.zsh_plugins.txt
 
-alias ll='ls --color=auto -lhaH'
+#alias ll='ls --color=auto -lhaH'
+alias ll='ls -lhaH'
 alias dots='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
 alias tre='tree -CDFfpugha'
 # Alias to update all git repos in a directory
