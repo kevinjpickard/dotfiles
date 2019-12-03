@@ -1,0 +1,7 @@
+repos ~/go/src/github.com/TheJumpCloud
+policies "$_repos/jumpcloud-policies-windows"
+gpo "$_repos/jumpcloud-gpo-generator"
+workstation "$_repos/jumpcloud-workstation"
+osquery "$_repos/osquery"
+agent "$_repos/jumpcloud-agent"
+
