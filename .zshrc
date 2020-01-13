@@ -39,6 +39,9 @@ if [[ $OSTYPE == darwin* ]]; then
   # For pkg-config to find zlib you may need to set:
   export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
   ## pyenv install fix ##
+
+  # Use GNU tar, not BSD
+  PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 else
 fi
 
@@ -62,9 +65,12 @@ nvm() { # Lazy-Loading NVM to speed up shell start
 # added by travis gem
 [ -f /Users/kevin/.travis/travis.sh ] && source /Users/kevin/.travis/travis.sh
 
-export RBENV_VERSION="2.6.3"
+# Ruby Setup
+export RBENV_VERSION="2.6.5"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/versions/$RBENV_VERSION/bin:$PATH"
+export GEM_HOME="$HOME/.gem"
+export PATH="$GEM_HOME/bin:$PATH"
 eval "$(rbenv init -)"
 
 # added by Miniconda3 4.3.21 installer

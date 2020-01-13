@@ -37,3 +37,6 @@
 [core]
 	excludesfile = /Users/kevin/.gitignore
 	hooksPath = /Users/kevin/.git/hooks
+[commit]
+  template = ~/.gitmessage
+
