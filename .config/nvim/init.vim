@@ -2,62 +2,49 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-" Required:
-set runtimepath+=$HOME/.config/nvim/dein/repos/github.com/Shougo/dein.vim
-
-" Required:
-if dein#load_state('$HOME/.config/nvim/dein')
-  call dein#begin('$HOME/.config/nvim/dein')
-
-  " Let dein manage dein
-  " Required:
-  call dein#add('$HOME/.config/nvim/dein/repos/github.com/Shougo/dein.vim')
-
-  " Add or remove your plugins here:
-  call dein#add('wsdjeg/dein-ui.vim')
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('neomake/neomake')
-  call dein#add('scrooloose/syntastic')
-  call dein#add('dag/vim-fish')
-  call dein#add('PProvost/vim-ps1')
-  call dein#add('tpope/vim-surround')
-  call dein#add('tpope/vim-dispatch')
-  call dein#add('saltstack/salt-vim')
-  call dein#add('tpope/vim-fugitive')
-  call dein#add('vim-airline/vim-airline')
-  call dein#add('vim-airline/vim-airline-themes')
-  call dein#add('Shougo/deoplete.nvim')
-  call dein#add('zchee/deoplete-go')
-  call dein#add('zchee/deoplete-jedi')
-  call dein#add('fatih/vim-go')
-  call dein#add('sheerun/vim-polyglot')
-  call dein#add('rcabralc/monokai-airline.vim')
-  call dein#add('sickill/vim-monokai')
-  call dein#add('rizzatti/dash.vim')
-  call dein#add('davidhalter/jedi-vim')
-  call dein#add('ryanoasis/vim-devicons')
-  call dein#add('bagrat/vim-workspace')
-  call dein#add('phanviet/vim-monokai-pro')
-  call dein#add('kaicataldo/material.vim')
-  call dein#add('mhinz/vim-startify')
-  call dein#add('airblade/vim-gitgutter')
-  call dein#add('janko-m/vim-test')
-  call dein#add('kaicataldo/material.vim')
-  call dein#add('dylanaraps/wal.vim')
-
-  " Required:
-  call dein#end()
-  call dein#save_state()
+" Install plugins w/ vim-plug
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
+call plug#begin('~/.config/nvim/plugged')
+Plug 'wsdjeg/dein-ui.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'neomake/neomake'
+Plug 'scrooloose/syntastic'
+Plug 'dag/vim-fish'
+Plug 'PProvost/vim-ps1'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-dispatch'
+Plug 'saltstack/salt-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-go'
+Plug 'zchee/deoplete-jedi'
+Plug 'fatih/vim-go'
+Plug 'sheerun/vim-polyglot'
+Plug 'rcabralc/monokai-airline.vim'
+Plug 'sickill/vim-monokai'
+Plug 'rizzatti/dash.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'bagrat/vim-workspace'
+Plug 'phanviet/vim-monokai-pro'
+Plug 'kaicataldo/material.vim'
+Plug 'mhinz/vim-startify'
+Plug 'airblade/vim-gitgutter'
+Plug 'janko-m/vim-test'
+Plug 'kaicataldo/material.vim'
+Plug 'dylanaraps/wal.vim'
+call plug#end()
 
 " Required:
 filetype plugin indent on
 syntax enable
-
-" Install uninstalled plugins on startup
-if dein#check_install()
-  call dein#install()
-endif
 
 " Indent with 2 spaces, not tabs
 set laststatus=2
@@ -167,4 +154,5 @@ let test#strategy = "neovim"
 if (has("termguicolors"))
   set termguicolors
 endif
+
 

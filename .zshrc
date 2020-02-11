@@ -136,4 +136,7 @@ export PATH="${PATH}:$GOBIN"
 alias dc='docker-compose'
 
 #export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK" # Fix this. For some reason its never set correctly and breaks
-#alias fixauthsock='export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK"' # For some reason this keeps getting set wrong, breaks docker
+alias fixauthsock='export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK"' # For some reason this keeps getting set wrong, breaks docker
+
+# added by travis gem
+[ -f /Users/kevinpickard/.travis/travis.sh ] && source /Users/kevinpickard/.travis/travis.sh
