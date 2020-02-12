@@ -9,7 +9,13 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+let g:plug_window = 'vertical belowright new'
+
 call plug#begin('~/.config/nvim/plugged')
+" For Vim-Plug Help
+Plug 'junegunn/vim-plug'
+
+" Other Plugins
 Plug 'wsdjeg/dein-ui.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'neomake/neomake'
