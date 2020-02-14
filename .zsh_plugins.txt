@@ -8,6 +8,7 @@ caarlos0/zsh-git-sync kind:path
 desyncr/auto-ls
 zdharma/fast-syntax-highlighting
 zpm-zsh/autoenv
+zpm-zsh/colors
 zsh-users/zsh-autosuggestions
 bric3/nice-exit-code
 

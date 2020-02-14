@@ -140,3 +140,7 @@ alias fixauthsock='export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK"' # For some rea
 
 # added by travis gem
 [ -f /Users/kevinpickard/.travis/travis.sh ] && source /Users/kevinpickard/.travis/travis.sh
+
+# AutoENV Configs
+CLICOLOR=1
+
