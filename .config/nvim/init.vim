@@ -9,6 +9,8 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" testing nerdtree git gutter
+
 let g:plug_window = 'vertical belowright new'
 
 call plug#begin('~/.config/nvim/plugged')
@@ -16,37 +18,44 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/vim-plug'
 
 " Other Plugins
-Plug 'wsdjeg/dein-ui.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'neomake/neomake'
 Plug 'scrooloose/syntastic'
-Plug 'dag/vim-fish'
-Plug 'PProvost/vim-ps1'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-dispatch'
-Plug 'saltstack/salt-vim'
 Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim'
-Plug 'zchee/deoplete-go'
-Plug 'zchee/deoplete-jedi'
-Plug 'fatih/vim-go'
-Plug 'sheerun/vim-polyglot'
-Plug 'rcabralc/monokai-airline.vim'
-Plug 'sickill/vim-monokai'
 Plug 'rizzatti/dash.vim'
-Plug 'davidhalter/jedi-vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'bagrat/vim-workspace'
-Plug 'phanviet/vim-monokai-pro'
-Plug 'kaicataldo/material.vim'
 Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-gitgutter'
 Plug 'janko-m/vim-test'
-Plug 'kaicataldo/material.vim'
 Plug 'dylanaraps/wal.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'simnalamburt/vim-mundo'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" Language Support
+Plug 'fatih/vim-go'
+Plug 'sheerun/vim-polyglot'
+Plug 'davidhalter/jedi-vim'
+Plug 'zchee/deoplete-go'
+Plug 'zchee/deoplete-jedi'
+Plug 'PProvost/vim-ps1'
+Plug 'saltstack/salt-vim'
+
+" Status Line
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'rcabralc/monokai-airline.vim'
+
+" Colors
 Plug 'nikitavoloboev/vim-monokai-night'
+Plug 'phanviet/vim-monokai-pro'
+Plug 'kaicataldo/material.vim'
+Plug 'sickill/vim-monokai'
+
 call plug#end()
 
 " Required:
@@ -74,8 +83,17 @@ set number
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%>79v.\+/
 
-autocmd vimenter * NERDTree
+" NerdTree show hidden files/folders
 let NERDTreeShowHidden=1
+" NerdTree Toggle HotKey
+map <C-n> :NERDTreeToggle<CR>
+" Required for the next options
+autocmd StdinReadPre * let s:std_in=1
+" Open NerdTree when vim is started with no file or directory
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Open NerdTree when vim is started with a directory
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
 
 " persistent undo
 if has("persistent_undo")
@@ -104,7 +122,8 @@ let g:syntastic_check_on_wq = 1
 
 " vim-airline
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline_extensions#tabline#enabled = 1
+"let g:airline_extensions#tabline#show_buffers = 1
 let g:airline_theme='material'
 
 " listchars to show tabs/spaces
@@ -163,4 +182,6 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+" Mundo HotKey
+nnoremap <F5> :MundoToggle<CR>
 
