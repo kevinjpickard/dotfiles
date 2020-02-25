@@ -46,6 +46,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'janko-m/vim-test'
 Plug 'kaicataldo/material.vim'
 Plug 'dylanaraps/wal.vim'
+Plug 'nikitavoloboev/vim-monokai-night'
 call plug#end()
 
 " Required:
@@ -114,7 +115,8 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 if has("nvim")
   " Neovim changes
   set background=dark
-  colorscheme material
+  "colorscheme material
+  colorscheme monokai-night
   "colorscheme wal " Make sure to unset termguicolors with this theme
   let g:material_theme_style = 'dark'
   set guicursor=
