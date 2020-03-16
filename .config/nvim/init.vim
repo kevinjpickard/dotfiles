@@ -35,6 +35,7 @@ Plug 'dylanaraps/wal.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'simnalamburt/vim-mundo'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tpope/vim-commentary'
 
 " Language Support
 Plug 'fatih/vim-go'
