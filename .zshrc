@@ -122,7 +122,9 @@ alias path="echo $PATH | tr -s ':' '\n'"
 export GALLIUM_HUD=fps
 
 # pyenv init
+export PATH="/home/kevin/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # Trying to add a different background color to prompt lines to make them pop-out (useful for commands with a lot of output)
 #PROMPT='%{$bg[grey]%} '$PROMPT
