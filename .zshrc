@@ -144,3 +144,8 @@ alias fixauthsock='export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK"' # For some rea
 # AutoENV Configs
 CLICOLOR=1
 
+# Remove background colos for ls
+eval "$(dircolors -p | \
+      sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
+          dircolors /dev/stdin)"
+

@@ -106,7 +106,7 @@ endif
 
 " backups
 "set backup
-set backupdir=$HOME/backups/vim/backups//
+"set backupdir=$HOME/backups/vim/backups//
 
 " swap files
 set directory=$HOME/backups/vim/swap/
@@ -135,8 +135,8 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 if has("nvim")
   " Neovim changes
   set background=dark
-  "colorscheme material
-  colorscheme monokai-night
+  colorscheme material
+  "colorscheme monokai-night
   "colorscheme wal " Make sure to unset termguicolors with this theme
   let g:material_theme_style = 'dark'
   set guicursor=
@@ -174,6 +174,9 @@ nmap <silent> t<C-s> :TestSuite<CR>   " t Ctrl+s
 nmap <silent> t<C-l> :TestLast<CR>    " t Ctrl+l
 nmap <silent> t<C-g> :TestVisit<CR>   " t Ctrl+g
 let test#strategy = "neovim"
+
+" Vim-Go Config
+let g:go_gmt_command = "gopls"
 
 " True colors
 "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
