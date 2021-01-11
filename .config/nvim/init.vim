@@ -24,7 +24,16 @@ Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
 Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoppet.nvim', { 'do': ':UpdateRemotePlugins' }
+if has('nvim')
+  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/denite.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 Plug 'rizzatti/dash.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'bagrat/vim-workspace'
@@ -38,7 +47,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-commentary'
 
 " Language Support
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'sheerun/vim-polyglot'
 Plug 'davidhalter/jedi-vim'
 Plug 'zchee/deoplete-go'
@@ -52,7 +61,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'rcabralc/monokai-airline.vim'
 
 " Colors
-Plug 'nikitavoloboev/vim-monokai-night'
+" Plug 'nikitavoloboev/vim-monokai-night'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'kaicataldo/material.vim'
 Plug 'sickill/vim-monokai'
@@ -177,6 +186,7 @@ let test#strategy = "neovim"
 
 " Vim-Go Config
 let g:go_gmt_command = "gopls"
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' }) " Deoplete/Vim-Go autocompletion
 
 " True colors
 "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
@@ -188,4 +198,14 @@ endif
 
 " Mundo HotKey
 nnoremap <F5> :MundoToggle<CR>
+
+" CTRL+/ to toggle comment
+" For some reason, CTRL+/ is detected as ^_ in (n)vim
+" **** Example for unsupported language ****
+" augroup fitetype_vim
+"   autocmd!
+"   autocmd FileType vim setlocal commentstring=\"\ %s
+" augroup end
+nnoremap <C-_> :Commentary<CR>
+xnoremap <C-_> :Commentary<CR>
 
