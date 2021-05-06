@@ -133,6 +133,7 @@ eval "$(pyenv virtualenv-init -)"
 export GOPATH=~/go
 export GOBIN="$GOPATH/bin"
 export PATH="${PATH}:$GOBIN"
+export PATH=$PATH:/usr/local/go/bin
 
 # Docker/Docker-Compose
 alias dc='docker-compose'
