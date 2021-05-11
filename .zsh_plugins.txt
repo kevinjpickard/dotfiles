@@ -16,5 +16,6 @@ bric3/nice-exit-code
 robbyrussell/oh-my-zsh path:lib
 #robbyrussell/oh-my-zsh path:themes/nanotech.zsh-theme
 #robbyrussell/oh-my-zsh path:themes/candy.zsh-theme
-robbyrussell/oh-my-zsh path:themes/ys.zsh-theme
+#robbyrussell/oh-my-zsh path:themes/ys.zsh-theme
+robbyrussell/oh-my-zsh path:themes/bira.zsh-theme
 #robbyrussell/oh-my-zsh path:themes/rkj-repos.zsh-theme

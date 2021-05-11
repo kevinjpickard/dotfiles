@@ -17,12 +17,12 @@ if [[ $OSTYPE == darwin* ]]; then
 
   # Homebrew installs + coreutils
   export PATH="/usr/local/Cellar:$PATH"
-  #export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
   # Agent version check
   alias vcheck='python ~/scripts/vcheck.py'
 
-  export JUMPCLOUD_WORKSPACE='/Users/kevin/go/src/github.com/TheJumpCloud'
+  export JUMPCLOUD_WORKSPACE='/Users/kevinpickard/go/src/github.com/TheJumpCloud'
   export PGDATA='/var/lib/postgresql/data/pgdata'
 
   # SSH AUTH SOCKET for docker shtuff (OSX Only)
@@ -42,6 +42,9 @@ if [[ $OSTYPE == darwin* ]]; then
 
   # Use GNU tar, not BSD
   PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+
+  # Docker SSH Agent Forwarding
+  export DOCKER_SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock
 else
 fi
 
@@ -54,13 +57,11 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # PowerLine
 #. /usr/local/lib/python3.6/*-packages/powerline/bindings/zsh/powerline.zsh
 
-nvm() { # Lazy-Loading NVM to speed up shell start
-  unset -f nvm
-  export NVM_DIR="$HOME/.nvm"
-  #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-  . "/usr/local/opt/nvm/nvm.sh"
-  nvm "$@"
-}
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+. "/usr/local/opt/nvm/nvm.sh"
+export PATH="$PATH:$(nvm which current)"
 
 # added by travis gem
 [ -f /Users/kevin/.travis/travis.sh ] && source /Users/kevin/.travis/travis.sh
@@ -134,9 +135,15 @@ export GOPATH=~/go
 export GOBIN="$GOPATH/bin"
 export PATH="${PATH}:$GOBIN"
 export PATH=$PATH:/usr/local/go/bin
+export GOPRIVATE=github.com/TheJumpCloud
+export GOFLAGS=-mod=vendor
 
 # Docker/Docker-Compose
 alias dc='docker-compose'
+alias dcci='docker-compose --file docker-compose.ci.yml'
+function dcuf() {
+  dc up -d $1 && dc logs -f $1
+}
 
 #export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK" # Fix this. For some reason its never set correctly and breaks
 alias fixauthsock='export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK"' # For some reason this keeps getting set wrong, breaks docker
@@ -151,4 +158,7 @@ CLICOLOR=1
 eval "$(dircolors -p | \
       sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
           dircolors /dev/stdin)"
+
+# Poetry config
+export PATH="$PATH:$HOME/.poetry/bin"
 

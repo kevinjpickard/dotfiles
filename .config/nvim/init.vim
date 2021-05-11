@@ -17,11 +17,19 @@ call plug#begin('~/.config/nvim/plugged')
 " For Vim-Plug Help
 Plug 'junegunn/vim-plug'
 
-" Other Plugins
+" Utilities and Tools
 Plug 'scrooloose/nerdtree'
+Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'rizzatti/dash.vim'
 Plug 'neomake/neomake'
 Plug 'scrooloose/syntastic'
+Plug 'simnalamburt/vim-mundo'
+Plug 'Shougo/deoplete.nvim'
+Plug 'bagrat/vim-workspace'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'janko-m/vim-test'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -35,16 +43,16 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'rizzatti/dash.vim'
+Plug 'tpope/vim-bundler'
+
+" Other Plugins
 Plug 'ryanoasis/vim-devicons'
-Plug 'bagrat/vim-workspace'
 Plug 'mhinz/vim-startify'
-Plug 'airblade/vim-gitgutter'
-Plug 'janko-m/vim-test'
-Plug 'dylanaraps/wal.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'simnalamburt/vim-mundo'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-tbone'
 
 " Language Support
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -65,6 +73,8 @@ Plug 'rcabralc/monokai-airline.vim'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'kaicataldo/material.vim'
 Plug 'sickill/vim-monokai'
+Plug 'dunckr/vim-monokai-soda'
+Plug 'dylanaraps/wal.vim'
 
 call plug#end()
 
@@ -96,7 +106,7 @@ match OverLength /\%>79v.\+/
 " NerdTree show hidden files/folders
 let NERDTreeShowHidden=1
 " NerdTree Toggle HotKey
-map <C-n> :NERDTreeToggle<CR>
+map <C-b> :NERDTreeToggle<CR>
 " Required for the next options
 autocmd StdinReadPre * let s:std_in=1
 " Open NerdTree when vim is started with no file or directory
