@@ -155,10 +155,12 @@ alias fixauthsock='export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK"' # For some rea
 CLICOLOR=1
 
 # Remove background colos for ls
-eval "$(dircolors -p | \
-      sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
-          dircolors /dev/stdin)"
+#eval "$(dircolors -p | \
+#      sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
+#          dircolors /dev/stdin)"
 
 # Poetry config
 export PATH="$PATH:$HOME/.poetry/bin"
 
+# Docker TOP interface
+alias ctop='docker run --rm -ti -v /var/run/docker.sock:/var/run/docker.sock quay.io/vektorlab/ctop:latest'
