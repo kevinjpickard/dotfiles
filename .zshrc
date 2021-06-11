@@ -45,6 +45,10 @@ if [[ $OSTYPE == darwin* ]]; then
 
   # Docker SSH Agent Forwarding
   export DOCKER_SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock
+
+  #export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK" # Fix this. For some reason its never set correctly and breaks
+  alias fixauthsock='export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK"' # For some reason this keeps getting set wrong, breaks docker
+
 else
 fi
 
@@ -63,19 +67,17 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # . "/usr/local/opt/nvm/nvm.sh"
 # export PATH="$PATH:$(nvm which current)"
 
-# added by travis gem
-[ -f /Users/kevin/.travis/travis.sh ] && source /Users/kevin/.travis/travis.sh
-
 # Ruby Setup
-export RBENV_VERSION="2.6.5"
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.rbenv/versions/$RBENV_VERSION/bin:$PATH"
-export GEM_HOME="$HOME/.gem"
-export PATH="$GEM_HOME/bin:$PATH"
-eval "$(rbenv init -)"
+# export RBENV_VERSION="2.6.5"
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# export PATH="$HOME/.rbenv/versions/$RBENV_VERSION/bin:$PATH"
+# export GEM_HOME="$HOME/.gem"
+# export PATH="$GEM_HOME/bin:$PATH"
+# eval "$(rbenv init -)"
 
 # added by Miniconda3 4.3.21 installer
 export PATH="/Users/kevin/miniconda3/bin:$PATH"
+#export PYTHONPATH=/usr/local/miniconda3/bin:$PYTHONPATH
 
 # For all those times you just fuck up
 eval $(thefuck --alias)
@@ -87,9 +89,6 @@ fi
 
 # Set config home
 export XDG_CONFIG_HOME=~/.config
-
-# Miniconda
-#export PYTHONPATH=/usr/local/miniconda3/bin:$PYTHONPATH
 
 export PATH="/usr/local/opt/mongodb@3.0/bin:$PATH"
 
@@ -110,7 +109,7 @@ alias sync-system='ANSIBLE_LIBRARY=~/sysconfig/ansible/library/aur ansible-playb
 export VAGRANT_IGNORE_WINRM_PLUGIN=true
 
 # added by travis gem
-[ -f /home/kevin/.travis/travis.sh ] && source /home/kevin/.travis/travis.sh
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 # Pywal colorscheme
 #(cat $HOME/.cache/wal/sequences &)
@@ -123,9 +122,9 @@ alias path="echo $PATH | tr -s ':' '\n'"
 export GALLIUM_HUD=fps
 
 # pyenv init
-export PATH="/home/kevin/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# export PATH="/home/kevin/.pyenv/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 # Trying to add a different background color to prompt lines to make them pop-out (useful for commands with a lot of output)
 #PROMPT='%{$bg[grey]%} '$PROMPT
@@ -144,12 +143,6 @@ alias dcci='docker-compose --file docker-compose.ci.yml'
 function dcuf() {
   dc up -d $1 && dc logs -f $1
 }
-
-#export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK" # Fix this. For some reason its never set correctly and breaks
-alias fixauthsock='export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK"' # For some reason this keeps getting set wrong, breaks docker
-
-# added by travis gem
-[ -f /Users/kevinpickard/.travis/travis.sh ] && source /Users/kevinpickard/.travis/travis.sh
 
 # AutoENV Configs
 CLICOLOR=1
