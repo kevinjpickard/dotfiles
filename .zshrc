@@ -58,10 +58,10 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 #. /usr/local/lib/python3.6/*-packages/powerline/bindings/zsh/powerline.zsh
 
 # nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-. "/usr/local/opt/nvm/nvm.sh"
-export PATH="$PATH:$(nvm which current)"
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# . "/usr/local/opt/nvm/nvm.sh"
+# export PATH="$PATH:$(nvm which current)"
 
 # added by travis gem
 [ -f /Users/kevin/.travis/travis.sh ] && source /Users/kevin/.travis/travis.sh
@@ -97,8 +97,8 @@ export PATH="/usr/local/opt/mongodb@3.0/bin:$PATH"
 source <(antibody init)
 antibody bundle < ~/.zsh_plugins.txt
 
-#alias ll='ls --color=auto -lhaH'
-alias ll='ls -lhaH'
+alias ll='ls --color=auto -lhaH'
+#alias ll='ls -lhaH'
 alias dots='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
 alias tre='tree -CDFfpugha'
 # Alias to update all git repos in a directory
@@ -155,9 +155,9 @@ alias fixauthsock='export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK"' # For some rea
 CLICOLOR=1
 
 # Remove background colos for ls
-#eval "$(dircolors -p | \
-#      sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
-#          dircolors /dev/stdin)"
+eval "$(dircolors -p | \
+      sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
+          dircolors /dev/stdin)"
 
 # Poetry config
 export PATH="$PATH:$HOME/.poetry/bin"
