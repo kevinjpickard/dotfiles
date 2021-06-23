@@ -50,6 +50,10 @@ if [[ $OSTYPE == darwin* ]]; then
   alias fixauthsock='export SSH_AUTH_SOCK="/private$SSH_AUTH_SOCK"' # For some reason this keeps getting set wrong, breaks docker
 
 else
+  # Remove background colos for ls (linux only)
+  eval "$(dircolors -p | \
+        sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
+            dircolors /dev/stdin)"
 fi
 
 export EDITOR='nvim'
@@ -146,11 +150,6 @@ function dcuf() {
 
 # AutoENV Configs
 CLICOLOR=1
-
-# Remove background colos for ls
-eval "$(dircolors -p | \
-      sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
-          dircolors /dev/stdin)"
 
 # Poetry config
 export PATH="$PATH:$HOME/.poetry/bin"
