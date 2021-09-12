@@ -97,8 +97,38 @@ export XDG_CONFIG_HOME=~/.config
 export PATH="/usr/local/opt/mongodb@3.0/bin:$PATH"
 
 # Antibody
-source <(antibody init)
-antibody bundle < ~/.zsh_plugins.txt
+# source <(antibody init)
+# antibody bundle < ~/.zsh_plugins.txt
+# Antigen (ZSH Package Manager)
+source ~/antigen.zsh
+
+antigen use ~/.oh-my-zsh
+
+# Bundles from default repo
+antigen bundle git
+antigen bundle ssh-agent
+antigen bundle sudo
+antigen bundle golang
+antigen bundle asdf
+antigen bundle tmux
+
+# Other repos
+antigen bundle adrieankhisbe/diractions
+antigen bundle caarlos0/zsh-git-sync kind:path
+antigen bundle desyncr/auto-ls
+antigen bundle zdharma/fast-syntax-highlighting
+antigen bundle zpm-zsh/autoenv
+antigen bundle zpm-zsh/colors
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle bric3/nice-exit-code
+
+antigen theme candy
+# antigen theme nanotech
+# antigen theme ys
+# antigen theme bira
+# antigen theme rkj-repos
+
+antigen apply
 
 alias ll='ls --color=auto -lhaH'
 #alias ll='ls -lhaH'
