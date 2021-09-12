@@ -100,8 +100,16 @@ export PATH="/usr/local/opt/mongodb@3.0/bin:$PATH"
 # source <(antibody init)
 # antibody bundle < ~/.zsh_plugins.txt
 # Antigen (ZSH Package Manager)
-source ~/antigen.zsh
+if [ ! -d "$HOME/antigen" ]; then
+  echo "antigen not found, installing..."
+  git clone https://github.com/zsh-users/antigen.git ~/antigen
+fi
+source ~/antigen/antigen.zsh
 
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  echo "oh-my-zsh not found, installing..."
+  git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+fi
 antigen use ~/.oh-my-zsh
 
 # Bundles from default repo
