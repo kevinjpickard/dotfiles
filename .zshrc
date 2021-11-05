@@ -112,6 +112,11 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 fi
 antigen use ~/.oh-my-zsh
 
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+  echo "tmux package manager not found, installing..."
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
 # Bundles from default repo
 antigen bundle git
 antigen bundle ssh-agent
