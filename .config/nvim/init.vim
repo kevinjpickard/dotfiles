@@ -75,6 +75,7 @@ Plug 'kaicataldo/material.vim'
 Plug 'sickill/vim-monokai'
 Plug 'dunckr/vim-monokai-soda'
 Plug 'dylanaraps/wal.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
 
@@ -145,7 +146,8 @@ let g:airline_powerline_fonts = 1
 "let g:airline_extensions#tabline#enabled = 1
 "let g:airline_extensions#tabline#show_buffers = 1
 " let g:airline_theme='material'
-let g:airline_theme='deus'
+" let g:airline_theme='deus'
+let g:airline_theme='base16_dracula'
 
 " listchars to show tabs/spaces
 "   To enable   :set list
@@ -155,7 +157,8 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 if has("nvim")
   " Neovim changes
   set background=dark
-  colorscheme material
+  colorscheme dracula
+  " colorscheme material
   "colorscheme monokai-night
   "colorscheme wal " Make sure to unset termguicolors with this theme
   let g:material_theme_style = 'dark'
