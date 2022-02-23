@@ -129,6 +129,7 @@ zplug "plugins/tmux",       from:oh-my-zsh
 zplug "adrieankhisbe/diractions"
 zplug "caarlos0/zsh-git-sync"
 zplug "desyncr/auto-ls"
+zplug "dracula/zsh-syntax-highlighting"
 zplug "z-shell/fast-syntax-highlighting"
 zplug "zpm-zsh/autoenv"
 zplug "zpm-zsh/colors"
