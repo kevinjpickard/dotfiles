@@ -134,20 +134,22 @@ zplug "zpm-zsh/autoenv"
 zplug "zpm-zsh/colors"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "bric3/nice-exit-code"
+zplug "zsh-users/zsh-history-substring-search"
 
 # Zplug Theme Install
 zplug "themes/candy", from:oh-my-zsh, as:theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
+  zplug install
+  zplug load --verbose
+else
+  zplug load
 fi
 
-# Then, source plugins and add commands to $PATH
-zplug load --verbose
+# FISH-style history searching (requires zsh-users/zsh-history-substring-search zsh plugin)
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # Aliases
 alias ll='ls --color=auto -lhaH'
