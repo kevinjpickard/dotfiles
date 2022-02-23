@@ -144,7 +144,8 @@ let g:syntastic_check_on_wq = 1
 let g:airline_powerline_fonts = 1
 "let g:airline_extensions#tabline#enabled = 1
 "let g:airline_extensions#tabline#show_buffers = 1
-let g:airline_theme='material'
+" let g:airline_theme='material'
+let g:airline_theme='deus'
 
 " listchars to show tabs/spaces
 "   To enable   :set list

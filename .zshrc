@@ -1,10 +1,14 @@
 export ZSH="$HOME/.oh-my-zsh"
+# Ensure oh-my-zsh is installed
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  echo "oh-my-zsh not found, installing..."
+  git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+fi
 # TMux ZSH Plugin Behavior
 export ZSH_TMUX_AUTOSTART=true
 export ZSH_TMUX_AUTOQUIT=true
 export ZSH_TMUX_AUTOSTART_ONCE=true
 export ZSH_TMUX_AUTOCONNECT=false
-plugins=(tmux)
 source $ZSH/oh-my-zsh.sh
 DISABLE_UPDATE_PROMPT="true"
 DISABLE_CORRECTION="true"
@@ -96,53 +100,56 @@ export XDG_CONFIG_HOME=~/.config
 
 export PATH="/usr/local/opt/mongodb@3.0/bin:$PATH"
 
-# Antibody
-# source <(antibody init)
-# antibody bundle < ~/.zsh_plugins.txt
-# Antigen (ZSH Package Manager)
-if [ ! -d "$HOME/antigen" ]; then
-  echo "antigen not found, installing..."
-  git clone https://github.com/zsh-users/antigen.git ~/antigen
-fi
-source ~/antigen/antigen.zsh
-
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  echo "oh-my-zsh not found, installing..."
-  git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
-fi
-antigen use ~/.oh-my-zsh
-
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
   echo "tmux package manager not found, installing..."
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
-# Bundles from default repo
-antigen bundle git
-antigen bundle ssh-agent
-antigen bundle sudo
-antigen bundle golang
-antigen bundle asdf
-antigen bundle tmux
+if [ ! -d "$HOME/.asdf" ]; then
+  echo "asdf not found, installing..."
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+fi
+
+export ZPLUG_HOME="$HOME/.zplug"
+if [ ! -f "$ZPLUG_HOME/init.zsh" ]; then
+  echo "zplug not found, installing..."
+  git clone https://github.com/zplug/zplug $ZPLUG_HOME
+fi
+source $ZPLUG_HOME/init.zsh
+
+# oh-my-zsh plugins
+zplug "plugins/git",        from:oh-my-zsh
+zplug "plugins/ssh-agent",  from:oh-my-zsh
+zplug "plugins/sudo",       from:oh-my-zsh
+zplug "plugins/golang",     from:oh-my-zsh
+zplug "plugins/asdf",       from:oh-my-zsh
+zplug "plugins/tmux",       from:oh-my-zsh
 
 # Other repos
-antigen bundle adrieankhisbe/diractions
-antigen bundle caarlos0/zsh-git-sync kind:path
-antigen bundle desyncr/auto-ls
-antigen bundle zdharma/fast-syntax-highlighting
-antigen bundle zpm-zsh/autoenv
-antigen bundle zpm-zsh/colors
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle bric3/nice-exit-code
+zplug "adrieankhisbe/diractions"
+zplug "caarlos0/zsh-git-sync"
+zplug "desyncr/auto-ls"
+zplug "z-shell/fast-syntax-highlighting"
+zplug "zpm-zsh/autoenv"
+zplug "zpm-zsh/colors"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "bric3/nice-exit-code"
 
-antigen theme candy
-# antigen theme nanotech
-# antigen theme ys
-# antigen theme bira
-# antigen theme rkj-repos
+# Zplug Theme Install
+zplug "themes/candy", from:oh-my-zsh, as:theme
 
-antigen apply
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
 
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
+
+# Aliases
 alias ll='ls --color=auto -lhaH'
 #alias ll='ls -lhaH'
 alias dots='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
