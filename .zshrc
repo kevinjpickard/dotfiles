@@ -153,8 +153,9 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 # Aliases
-alias ll='ls --color=auto -lhaH'
+# alias ll='ls --color=auto -lhaH'
 #alias ll='ls -lhaH'
+alias ll='colorls -lha --sd --dark'
 alias dots='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
 alias tre='tree -CDFfpugha'
 # Alias to update all git repos in a directory
