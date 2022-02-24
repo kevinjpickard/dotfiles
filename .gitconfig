@@ -35,7 +35,7 @@
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [core]
-	excludesfile = /Users/kevinpickard/.gitignore
+	excludesFile = /Users/kevin/.gitignore
 	hooksPath = /Users/kevin/.git/hooks
 [commit]
   template = ~/.gitmessage

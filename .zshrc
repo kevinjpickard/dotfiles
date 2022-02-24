@@ -192,7 +192,7 @@ export GOBIN="$GOPATH/bin"
 export PATH="${PATH}:$GOBIN"
 export PATH=$PATH:/usr/local/go/bin
 export GOPRIVATE=github.com/TheJumpCloud
-export GOFLAGS=-mod=vendor
+# export GOFLAGS=-mod=vendor
 
 # Docker/Docker-Compose
 alias dc='docker-compose'

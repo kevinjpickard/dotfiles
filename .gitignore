@@ -13,3 +13,6 @@
 # node modules
 node_modules/
 
+# asdf version manager
+.tool-versions
+
