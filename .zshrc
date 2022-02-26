@@ -153,9 +153,15 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 # Aliases
-# alias ll='ls --color=auto -lhaH'
-#alias ll='ls -lhaH'
-alias ll='colorls -lha --sd --dark'
+if ! type "$colorls" > /dev/null; then
+  alias ll='colorls -lha --sd --gs --dark' # --sd: sort dirs first | --gs: git status (if applicable)
+else
+  if [[ $OSTYPE == darwin* ]]; then
+    alias ll='ls -lhaH'
+  else
+    alias ll='ls --color=auto -lhaH'
+  fi
+fi
 alias dots='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
 alias tre='tree -CDFfpugha'
 # Alias to update all git repos in a directory
