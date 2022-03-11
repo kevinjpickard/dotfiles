@@ -153,7 +153,7 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 # Aliases
-if ! type "$colorls" > /dev/null; then
+if type "colorls" > /dev/null; then
   alias ll='colorls -lha --sd --gs --dark' # --sd: sort dirs first | --gs: git status (if applicable)
 else
   if [[ $OSTYPE == darwin* ]]; then
