@@ -5,4 +5,5 @@ workstation "$_repos/jumpcloud-workstation"
 osquery "$_repos/osquery"
 agent "$_repos/jumpcloud-agent"
 devices "$_repos/jumpcloud-devices"
+partners "$_repos/jumpcloud-partners"
 

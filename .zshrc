@@ -26,7 +26,7 @@ if [[ $OSTYPE == darwin* ]]; then
   # Agent version check
   alias vcheck='python ~/scripts/vcheck.py'
 
-  export JUMPCLOUD_WORKSPACE='/Users/kevinpickard/go/src/github.com/TheJumpCloud'
+  export JUMPCLOUD_WORKSPACE="$HOME/go/src/github.com/TheJumpCloud"
   export PGDATA='/var/lib/postgresql/data/pgdata'
 
   # SSH AUTH SOCKET for docker shtuff (OSX Only)
