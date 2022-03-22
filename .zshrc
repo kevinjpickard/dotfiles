@@ -127,7 +127,7 @@ zplug "plugins/tmux",       from:oh-my-zsh
 
 # Other repos
 zplug "adrieankhisbe/diractions"
-zplug "caarlos0/zsh-git-sync"
+zplug "caarlos0-graveyard/zsh-git-sync",        as:plugin
 zplug "desyncr/auto-ls"
 zplug "dracula/zsh-syntax-highlighting"
 zplug "z-shell/fast-syntax-highlighting"

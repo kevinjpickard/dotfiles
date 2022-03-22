@@ -69160,6 +69160,10 @@
 	<true/>
 	<key>HotkeyModifiers</key>
 	<integer>524288</integer>
+	<key>NeverWarnAboutShortLivedSessions_187C05D6-29A0-4CB0-88E0-99C403C0916D</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_187C05D6-29A0-4CB0-88E0-99C403C0916D_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
