@@ -88,7 +88,7 @@ export PATH="/Users/kevin/miniconda3/bin:$PATH"
 #export PYTHONPATH=/usr/local/miniconda3/bin:$PYTHONPATH
 
 # For all those times you just fuck up
-eval $(thefuck --alias)
+type thefuck >/dev/null 2>&1 && eval $(thefuck --alias)
 
 # Use NeoVim if it is installed
 if type nvim > /dev/null 2>&1; then
