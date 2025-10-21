@@ -15,9 +15,11 @@ zsh-users/zsh-autosuggestions
 bric3/nice-exit-code
 
 # Theme
-robbyrussell/oh-my-zsh path:lib
+# robbyrussell/oh-my-zsh path:lib
 #robbyrussell/oh-my-zsh path:themes/nanotech.zsh-theme
-robbyrussell/oh-my-zsh path:themes/candy.zsh-theme
+# robbyrussell/oh-my-zsh path:themes/candy.zsh-theme
 #robbyrussell/oh-my-zsh path:themes/ys.zsh-theme
 #robbyrussell/oh-my-zsh path:themes/bira.zsh-theme
 #robbyrussell/oh-my-zsh path:themes/rkj-repos.zsh-theme
+dracula/zsh as:theme
+

@@ -1,0 +1,118 @@
+[general]
+import = ["~/.config/alacritty/themes/alacritty-dracula/dracula.toml"]
+
+[colors.bright]
+black = "#625e4c"
+blue = "#9d65ff"
+cyan = "#58d1eb"
+green = "#98e024"
+magenta = "#f4005f"
+red = "#f4005f"
+white = "#f6f6ef"
+yellow = "#e0d561"
+
+[colors.normal]
+black = "#1a1a1a"
+blue = "#9d65ff"
+cyan = "#58d1eb"
+green = "#98e024"
+magenta = "#f4005f"
+red = "#f4005f"
+white = "#c4c5b5"
+yellow = "#fa8419"
+
+[colors.primary]
+background = "#1a1a1a"
+foreground = "#c4c5b5"
+
+[cursor]
+style = "Beam"
+
+[font]
+size = 10.0
+
+[font.bold]
+style = "Bold"
+
+[font.bold_italic]
+family = "DroidSansMonoSlashed Nerd Font"
+
+[font.italic]
+family = "DroidSansMonoSlashed Nerd Font"
+
+[font.normal]
+family = "DroidSansMonoSlashed Nerd Font"
+style = "Regular"
+
+# [schemes.monokai_dark.bright]
+# black = "#75715E"
+# blue = "#66D9EF"
+# cyan = "#A1EFE4"
+# green = "#A6E22E"
+# magenta = "#AE81FF"
+# red = "#F92672"
+# white = "#F9F8F5"
+# yellow = "#F4BF75"
+
+# [schemes.monokai_dark.normal]
+# black = "#272822"
+# blue = "#66D9EF"
+# cyan = "#A1EFE4"
+# green = "#A6E22E"
+# magenta = "#AE81FF"
+# red = "#F92672"
+# white = "#F8F8F2"
+# yellow = "#F4BF75"
+
+# [schemes.monokai_dark.primary]
+# background = "#272822"
+# foreground = "#F8F8F2"
+
+# [schemes.monokai_soda.bright]
+# black = "#625e4c"
+# blue = "#9d65ff"
+# cyan = "#58d1eb"
+# green = "#98e024"
+# magenta = "#f4005f"
+# red = "#f4005f"
+# white = "#f6f6ef"
+# yellow = "#e0d561"
+
+# [schemes.monokai_soda.normal]
+# black = "#1a1a1a"
+# blue = "#9d65ff"
+# cyan = "#58d1eb"
+# green = "#98e024"
+# magenta = "#f4005f"
+# red = "#f4005f"
+# white = "#c4c5b5"
+# yellow = "#fa8419"
+
+# [schemes.monokai_soda.primary]
+# background = "#1a1a1a"
+# foreground = "#c4c5b5"
+
+# [schemes.nord.bright]
+# black = "#4C566A"
+# blue = "#81A1C1"
+# cyan = "#8FBCBB"
+# green = "#A3BE8C"
+# magenta = "#B48EAD"
+# red = "#BF616A"
+# white = "#ECEFF4"
+# yellow = "#EBCB8B"
+
+# [schemes.nord.normal]
+# black = "#3B4252"
+# blue = "#81A1C1"
+# cyan = "#88C0D0"
+# green = "#A3BE8C"
+# magenta = "#B48EAD"
+# red = "#BF616A"
+# white = "#E5E9F0"
+# yellow = "#EBCB8B"
+
+# [schemes.nord.primary]
+# background = "#2E3440"
+# foreground = "#D8DEE9"
+

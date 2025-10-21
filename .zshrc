@@ -138,7 +138,8 @@ zplug "bric3/nice-exit-code"
 zplug "zsh-users/zsh-history-substring-search"
 
 # Zplug Theme Install
-zplug "themes/candy", from:oh-my-zsh, as:theme
+# zplug "themes/candy", from:oh-my-zsh, as:theme
+zplug "dracula/zsh", as:theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -216,3 +217,5 @@ export PATH="$PATH:$HOME/.poetry/bin"
 
 # Docker TOP interface
 alias ctop='docker run --rm -ti -v /var/run/docker.sock:/var/run/docker.sock quay.io/vektorlab/ctop:latest'
+
+export PATH=$PATH:/home/kevin/.spicetify
